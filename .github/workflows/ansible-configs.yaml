@@ -1,0 +1,23 @@
+name: Ansible Configurations
+
+on:
+  push:
+    paths:
+      - "ansible/**"
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  ansible:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Ansible
+      uses: dawidd6/action-ansible@v2
+
+    - name: Run Ansible Playbook
+      run: ansible-playbook -i ansible/inventories/hosts ansible/playbook.yml

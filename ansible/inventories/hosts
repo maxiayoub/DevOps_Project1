@@ -1,0 +1,6 @@
+[k8s_master]
+master-node-ip
+
+[k8s_worker]
+worker-node-ip-1
+worker-node-ip-2

@@ -1,0 +1,22 @@
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: present
+
+- name: Install kubeadm, kubelet, kubectl
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - kubeadm
+    - kubelet
+    - kubectl
+
+- name: Initialize Kubernetes master
+  command: kubeadm init
+
+- name: Set up kubeconfig for the master user
+  shell: |
+    mkdir -p $HOME/.kube
+    cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    chown $(id -u):$(id -g) $HOME/.kube/config
