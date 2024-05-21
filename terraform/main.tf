@@ -58,7 +58,7 @@ resource "aws_instance" "k8s_master" {
 }
 
 resource "aws_instance" "k8s_worker" {
-  count         = 2
+  #count         = 2
   ami           = "ami-04b70fa74e45c3917"
   instance_type = "t2.medium"
   subnet_id     = aws_subnet.subnet.id
@@ -66,6 +66,7 @@ resource "aws_instance" "k8s_worker" {
   associate_public_ip_address = true
 
   tags = {
-    Name = "K8s-Worker-${count.index}"
+    Name = "K8s-Worker"
+    #Name = "K8s-Worker-${count.index}"
   }
 }

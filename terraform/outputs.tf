@@ -13,12 +13,12 @@ output "aws_instance_k8s_master" {
   value = aws_instance.k8s_master.id
 }
 
-#output "aws_instance_k8s_worker" {
-#  description = "aws_instance_k8s_worker created ip"
-#  value = aws_instance.k8s_worker[count.index].id
-#}
-
 output "aws_instance_k8s_worker" {
   description = "aws_instance_k8s_worker created ip"
-  value = [for instance in aws_instance.k8s_worker : instance.public_ip ]
+  value = aws_instance.k8s_worker.id
 }
+
+#output "aws_instance_k8s_worker" {
+#  description = "aws_instance_k8s_worker created ip"
+#  value = [for instance in aws_instance.k8s_worker : instance.public_ip ]
+#}
