@@ -49,7 +49,7 @@ resource "aws_instance" "k8s_master" {
   ami           = "ami-04b70fa74e45c3917"
   instance_type = "t2.medium"
   subnet_id     = aws_subnet.subnet.id
-  security_groups = [aws_security_group.k8s.name]
+  security_groups = [aws_security_group.k8s.id]
   associate_public_ip_address = true
 
   tags = {
@@ -62,7 +62,7 @@ resource "aws_instance" "k8s_worker" {
   ami           = "ami-04b70fa74e45c3917"
   instance_type = "t2.medium"
   subnet_id     = aws_subnet.subnet.id
-  security_groups = [aws_security_group.k8s.name]
+  security_groups = [aws_security_group.k8s.id]
   associate_public_ip_address = true
 
   tags = {
