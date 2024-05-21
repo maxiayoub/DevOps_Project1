@@ -41,6 +41,7 @@ resource "aws_instance" "k8s_master" {
   instance_type = "t2.medium"
   subnet_id     = aws_subnet.subnet.id
   security_groups = [aws_security_group.k8s.name]
+  associate_public_ip_address = true
 
   tags = {
     Name = "K8s-Master"
@@ -53,6 +54,7 @@ resource "aws_instance" "k8s_worker" {
   instance_type = "t2.medium"
   subnet_id     = aws_subnet.subnet.id
   security_groups = [aws_security_group.k8s.name]
+  associate_public_ip_address = true
 
   tags = {
     Name = "K8s-Worker-${count.index}"
