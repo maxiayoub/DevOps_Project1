@@ -67,6 +67,6 @@ resource "aws_instance" "k8s_worker" {
 
   tags = {
     Name = "K8s-Worker"
-    #Name = "K8s-Worker-${count.index}"
+    #Name = 'K8s-Worker-[count.index]'
   }
 }
