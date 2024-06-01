@@ -20,5 +20,6 @@ output "aws_instance_k8s_worker" {
 
 #output "aws_instance_k8s_worker" {
 #  description = "aws_instance_k8s_worker created ip"
+#  type = list(string)
 #  value = [for instance in aws_instance.k8s_worker : instance.public_ip ]
 #}
