@@ -111,7 +111,7 @@ resource "aws_instance" "k8s_worker2" {
   }
 }
 
-#Elsatic IPs
+#Elastic IPs
 resource  "aws_eip" "master-eip"{
     domain = "vpc"
     instance = aws_instance.k8s_master.id
