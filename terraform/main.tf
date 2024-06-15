@@ -6,6 +6,13 @@ terraform {
         version = "~> 5.0"
       }
   }
+#Statefile with DynamoDB lock
+  backend "s3" {
+  bucket = "statefile-bucket-devops-project1"
+  key    = "statefile-bucket-devops-project1"
+  dynamodb_table = "devops_project1_state_table"
+  region = "us-east-1"
+  }
 }
 
 #Provider
