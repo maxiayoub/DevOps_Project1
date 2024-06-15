@@ -8,18 +8,17 @@ output "aws_subnet_id" {
   value = aws_subnet.subnet.id
 }
 
-output "aws_instance_k8s_master" {
+output "aws_instance_k8s_master_ip" {
   description = "aws_instance_k8s_master created ip"
-  value = aws_instance.k8s_master.id
+  value = aws_eip.master-eip.public_ip
 }
 
-output "aws_instance_k8s_worker" {
-  description = "aws_instance_k8s_worker created ip"
-  value = aws_instance.k8s_worker.id
+output "aws_instance_k8s_worker1_ip" {
+  description = "aws_instance_k8s_worker1 created ip"
+  value = aws_eip.worker-eip1.public_ip
 }
 
-#output "aws_instance_k8s_worker" {
-#  description = "aws_instance_k8s_worker created ip"
-#  type = list(string)
-#  value = [for instance in aws_instance.k8s_worker : instance.public_ip ]
-#}
+output "aws_instance_k8s_worker2_ip" {
+  description = "aws_instance_k8s_worker2 created ip"
+  value = aws_eip.worker-eip2.public_ip
+}
