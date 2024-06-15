@@ -1,11 +1,11 @@
 name: Ansible Configurations
 
 on:
-  push:
-    paths:
-      - "ansible/**"
-    branches:
-      - main
+  #push:
+   # paths:
+    #  - "ansible/**"
+    #branches:
+     # - main
   workflow_dispatch:
 
 jobs:
