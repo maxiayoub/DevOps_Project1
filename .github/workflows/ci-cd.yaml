@@ -1,11 +1,11 @@
 name: CI/CD Pipeline for App
 
 on:
-  push:
-    paths:
-        - "app/**"
-    branches:
-      - main
+  #push:
+   # paths:
+    #    - "app/**"
+    #branches:
+     # - main
   workflow_dispatch:
 
 jobs:
